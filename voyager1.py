@@ -1,5 +1,6 @@
 import datetime
 import ru_local as ru
+
 SPD = 38241
 DSTNC = 16637000000
 RADIO_WAVE = 299792458
@@ -12,7 +13,7 @@ date2 = datetime.date(year, month, day)
 delta = date2 - date1
 distanceday = SPD * 24
 distanceperiod = distanceday * delta.days
-distancetosun = DSTNC - distanceperiod
+distancetosun = DSTNC + distanceperiod
 delay = distancetosun / (RADIO_WAVE * 3600 / 1000 / 1.609)
 print(delta.days, ru.DAYS)
 print(distanceday, ru.PER_DAY)
